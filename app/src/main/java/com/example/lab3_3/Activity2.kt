@@ -3,25 +3,26 @@ package com.example.lab3_3
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lab3_3.databinding.Activity2Binding
+import com.example.lab3_3.databinding.Fragment2Binding
 
 class Activity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = Activity2Binding.inflate(layoutInflater)
+        val binding = Fragment2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnToThird.setOnClickListener {
+        binding.bnToThird.setOnClickListener {
             goToThird()
         }
 
-        binding.btnToFirst.setOnClickListener {
+        binding.bnToFirst.setOnClickListener {
             finish()
         }
 
-        binding.btnToAbout.setOnClickListener {
+        binding.bnToAbout.setOnClickListener {
+            binding.drawerLayout.closeDrawers()
             goToAbout()
         }
     }

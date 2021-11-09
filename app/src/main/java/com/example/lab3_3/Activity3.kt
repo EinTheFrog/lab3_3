@@ -3,26 +3,27 @@ package com.example.lab3_3
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lab3_3.databinding.Activity3Binding
+import com.example.lab3_3.databinding.Fragment3Binding
 
 class Activity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = Activity3Binding.inflate(layoutInflater)
+        val binding = Fragment3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnToSecond.setOnClickListener {
+        binding.bnToSecond.setOnClickListener {
             finish()
         }
 
-        binding.btnToFirst.setOnClickListener {
-            val intent = Intent(this, Activity1::class.java, )
+        binding.bnToFirst.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java, )
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
         }
 
-        binding.btnToAbout.setOnClickListener {
+        binding.bnToAbout.setOnClickListener {
+            binding.drawerLayout.closeDrawers()
             goToAbout()
         }
     }
